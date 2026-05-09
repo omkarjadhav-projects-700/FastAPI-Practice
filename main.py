@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 import math
 
 app = FastAPI()
@@ -17,9 +18,14 @@ async def get_factorial(num: int):
     }
 
 
-@app.get("/e to power/{num}")
+@app.get("/e^num/{num}")
 async def get_e_to_power(num: int):
     return {
         "number": num,
-        "e to power {num}": math.exp(num)
+        "e^ {num}": math.exp(num)
     }
+
+
+@app.get("/favicon.ico")
+async def favicon():
+    return FileResponse("favicon.ico")
