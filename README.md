@@ -1,4 +1,4 @@
-# FastAPI Practice
+# Production Grade FastAPI
 
 ## Project Overview
 
